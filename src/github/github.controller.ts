@@ -1,6 +1,7 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { plainToClass, plainToInstance } from 'class-transformer';
 import { firstValueFrom } from 'rxjs';
+import { Commit } from './entities/commit.entity';
 import { ListCommit } from './entities/list_commit.entity';
 import { GithubService } from './github.service';
 
@@ -17,6 +18,7 @@ export class GithubController {
 
     @Get(':id')
     async getCommitDetails(@Param('id') id: string) {
-        return this.githubService.getCommitDetails(id);
+        const commit = firstValueFrom(this.githubService.getCommitDetails(id));
+        return plainToClass(Commit, commit);
     }
 }
