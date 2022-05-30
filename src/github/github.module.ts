@@ -5,7 +5,7 @@ import { GithubService } from './github.service';
 
 @Module({
   imports: [HttpModule.register({
-    baseURL: '  https://api.github.com/repos/'
+    baseURL: '  https://api.github.com/repos/squeez4/CommitViewerBackend'
   })],
   controllers: [GithubController],
   providers: [GithubService]

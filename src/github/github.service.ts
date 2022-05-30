@@ -10,13 +10,13 @@ export class GithubService {
     }
 
     getCommits(page: string): Observable<ListCommit[]> {
-        return this.httpService.get<ListCommit[]>(`/squeez4/CommitViewerBackend/commits?page=${page}`).pipe(
+        return this.httpService.get<ListCommit[]>(`/commits?page=${page}`).pipe(
             map(response => response.data)
         )
     }
 
     getCommitDetails(id: string) {
-        return this.httpService.get(`/squeez4/CommitViewerBackend/commits/${id}`).pipe(
+        return this.httpService.get(`/commits/${id}`).pipe(
             map(response => response.data)
         );
     }
