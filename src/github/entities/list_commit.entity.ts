@@ -9,7 +9,7 @@ export class ListCommit {
     @Expose()
     author: object;
   
-    @Exclude()
+    @Expose()
     sha: string;
 
     @Exclude()

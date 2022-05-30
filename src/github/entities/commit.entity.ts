@@ -3,6 +3,9 @@ import { CommitAuthor } from "./commit_author";
 
 export class Commit {
     @Expose()
+    sha: string;
+    
+    @Expose()
     author: CommitAuthor;
 
     @Expose()
